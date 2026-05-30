@@ -387,7 +387,7 @@ CABINS = ["4112", "7089", "5234", "8301", "6445", "3178", "9022", "2567"]
 CREW_NAMES = ["Maria R.", "James T.", "Ana S.", "David K.", "Rose M."]
 
 def classify_with_claude(kannada_text, english_hint):
-    client = openai.OpenAI()
+    client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
     prompt = f"""You are the AI engine behind Crew Bridge, a ship coordination system for Princess Cruises.
 
 A crew member has captured a guest concern. Analyze it and return ONLY a JSON object with these exact fields:
